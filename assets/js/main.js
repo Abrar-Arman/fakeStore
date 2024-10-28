@@ -46,7 +46,8 @@ const displayProduct = async (page, ele) => {
     const numberogPage = Math.ceil(data.total / 20);
     const content = data.products
       .map(
-        (product) => `<div class='product-content'>
+        (product) => `
+        <div class='product-content'>
       <img onclick='displayModal(${product.id})'  src="${product.thumbnail}" alt="${product.title} " class='img'>
       <h3 onclick="display('${product.title}')">${product.title}</h3>
       <div class="product-details">
@@ -55,7 +56,8 @@ const displayProduct = async (page, ele) => {
        <i class="fa-solid fa-cart-shopping"></i>
        </div>
       </div>
-      </div>`
+      </div>
+      `
       )
       .join("");
     document.querySelector(".product .row").innerHTML = content;
